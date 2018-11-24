@@ -4,10 +4,10 @@ const Album = ({ title, artist, released, index }) => {
   return (
     <div class="row">
       <div class="col s12 m12">
-        <div class="card blue-grey lighten-5">
+        <div style={{ "margin-bottom": 0 }} class="card grey lighten-5">
           <div class="card-content">
-            <span class="card-title">{title}</span>
-            <h5>{artist}</h5>
+            <h5>{title}</h5>
+            <span class="card-title">{artist}</span>
             <h6>{released}</h6>
           </div>
         </div>

@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 
+//Components
+import { SubmitButton } from "./Buttons/index";
+
 class AddAlbumForm extends Component {
   state = {
     title: "",
@@ -60,7 +63,7 @@ class AddAlbumForm extends Component {
               name="released"
             />
           </div>
-          <input type="submit" value="Add" />
+          <SubmitButton />
         </form>
       </>
     );

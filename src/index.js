@@ -40,18 +40,20 @@ class App extends Component {
     const { albums, showAddForm, newAlbum } = this.state;
 
     return (
-      <div className="App">
+      <>
         <Header />
-        {showAddForm && (
-          <AddAlbumForm
-            handleAddAlbum={this.handleAddAlbum}
-            newAlbum={newAlbum}
-            albums={albums}
-          />
-        )}
-        <FloatingButton showAddForm={this.showAddForm} />
-        <AlbumList albums={albums} />
-      </div>
+        <div className="container">
+          {showAddForm && (
+            <AddAlbumForm
+              handleAddAlbum={this.handleAddAlbum}
+              newAlbum={newAlbum}
+              albums={albums}
+            />
+          )}
+          <FloatingButton showAddForm={this.showAddForm} />
+          <AlbumList albums={albums} />
+        </div>
+      </>
     );
   }
 }
