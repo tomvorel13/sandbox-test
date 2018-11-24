@@ -2,14 +2,15 @@ import React from "react";
 
 const Album = ({ title, artist, released, index }) => {
   return (
-    <div className="card">
-      <div className="left">
-        <span className="index-number">{index + 1}</span>
-      </div>
-      <div className="right">
-        <h1>{title}</h1>
-        <h2>{artist}</h2>
-        <h3>{released}</h3>
+    <div class="row">
+      <div class="col s12 m12">
+        <div class="card blue-grey lighten-5">
+          <div class="card-content">
+            <span class="card-title">{title}</span>
+            <h5>{artist}</h5>
+            <h6>{released}</h6>
+          </div>
+        </div>
       </div>
     </div>
   );
