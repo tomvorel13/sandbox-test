@@ -3,6 +3,8 @@ import React, { Component } from "react";
 //Components
 import { SubmitButton } from "./Buttons/index";
 
+import "../styles/color-styles.css";
+
 class AddAlbumForm extends Component {
   state = {
     title: "",
@@ -24,10 +26,10 @@ class AddAlbumForm extends Component {
   };
 
   handleChange = e => {
-    const name = e.target.name;
+    const id = e.target.id;
 
     this.setState({
-      [name]: e.target.value
+      [id]: e.target.value
     });
   };
 
@@ -35,36 +37,47 @@ class AddAlbumForm extends Component {
     const { title, artist, released } = this.state;
     return (
       <>
-        <form onSubmit={this.onSubmitHandler}>
-          <div>
-            <label htmlFor="title">Title</label> <br />
-            <input
-              value={title}
-              onChange={this.handleChange}
-              type="text"
-              name="title"
-            />
-          </div>
-          <div>
-            <label htmlFor="artist">Artist</label> <br />
-            <input
-              value={artist}
-              onChange={this.handleChange}
-              type="text"
-              name="artist"
-            />
-          </div>
-          <div>
-            <label htmlFor="released">Year of Release</label> <br />
-            <input
-              value={released}
-              onChange={this.handleChange}
-              type="text"
-              name="released"
-            />
-          </div>
-          <SubmitButton />
-        </form>
+        <div class="row">
+          <form class="col s12" onSubmit={this.onSubmitHandler}>
+            <div class="row">
+              <div class="input-field col s12">
+                <input
+                  id="title"
+                  type="text"
+                  class="validate"
+                  onChange={this.handleChange}
+                  value={title}
+                />
+                <label for="title">Title</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input
+                  id="artist"
+                  type="text"
+                  class="validate"
+                  onChange={this.handleChange}
+                  value={artist}
+                />
+                <label for="artist">Artist</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input
+                  id="released"
+                  type="number"
+                  class="validate"
+                  onChange={this.handleChange}
+                  value={released}
+                />
+                <label for="released">Released</label>
+              </div>
+            </div>
+            <SubmitButton />
+          </form>
+        </div>
       </>
     );
   }

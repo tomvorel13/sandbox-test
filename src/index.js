@@ -10,9 +10,6 @@ import { FloatingButton } from "./components/Buttons/index";
 // Data
 import { myAlbums } from "./data/data";
 
-//Styles
-import "./styles.css";
-
 class App extends Component {
   state = {
     albums: myAlbums,
